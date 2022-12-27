@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root{
+    /* ## Colors */
+    /* ### Primary */
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    /* ### Neutral */
+    --Transparent-white : hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+    --Very-light-gray : hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+    /* ###Font */
+    --ff-Big-Shoulders-Display: 'Big Shoulders Display', cursive;
+    --ff-Lexend-Deca: 'Lexend Deca', sans-serif;
+    --fw-regular :400;
+    --fw-bold: 700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 15px;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-light-gray);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    
+    max-width: 20rem;
+    margin: 3rem 1rem;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.card{
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    padding: 2.5rem;
+}
+
+.card--sedans{
+    background-color: var(--Bright-orange);
+}
+
+.card--suvs{
+    background-color: var(--Dark-cyan);
+}
+
+.card--luxury{
+    background-color: var(--Very-dark-cyan);
+}
+
+.card__icon{
+    width: 64px;
+    height: 40px;
+}
+
+.card__title{
+    margin: 2rem 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: var(--Very-light-gray);
+    font-weight: var(--fw-bold);
+    font-family: var(--ff-Big-Shoulders-Display);
+}
+
+.card__text{
+    flex: 1;
+    line-height: 1.6;
+    font-size: 1em;
+    color: var(--Transparent-white);
+    font-weight: var(--fw-regular);
+    font-family: var(--ff-Lexend-Deca);
+}
+
+.btn{
+    flex-shrink: 0;
+    cursor: pointer;
+    border: 0;
+    width: 10rem;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    font-weight: var(--fw-regular);
+    font-family: var(--ff-Lexend-Deca);
+    background-color: var(--Very-light-gray);
+}
+
+.btn:is(:hover, :focus){
+    opacity: .6;
+}
+
+.btn--sedans{
+    color: var(--Bright-orange);
+}
+
+.btn--suvs{
+    color: var(--Dark-cyan);
+}
+
+.btn--luxury{
+    color: var(--Very-dark-cyan);
+}
+
+@media (min-width: 600px){
+    .container{
+        flex-direction: row;
+        max-width: 57rem;
+        min-height: 32rem;
+    }
+
+    .card{
+        width: calc(calc(100% / 3) - 5rem); /*3 items, padding left and rigt 1 item 2.5rem*/
+    }
+}
